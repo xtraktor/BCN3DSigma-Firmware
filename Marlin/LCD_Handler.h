@@ -4018,10 +4018,11 @@ void myGenieEventHandler(void) //Handler for the do.Events() function
 						doblocking=true;
 						genie.WriteObject(GENIE_OBJ_FORM,FORM_PROCESSING,0);
 						gif_processing_state = PROCESSING_DEFAULT;
-						home_axis_from_code(true,true,false);
+						home_axis_from_code(true,true,true);
 						gif_processing_state = PROCESSING_STOP;						
 						st_synchronize();
 						Calib_check_temps();
+						gif_processing_state = PROCESSING_DEFAULT;		
 						if(gif_processing_state == PROCESSING_ERROR)return;
 						changeTool(0);
 						enquecommand_P(PSTR("G40"));
@@ -4048,10 +4049,11 @@ void myGenieEventHandler(void) //Handler for the do.Events() function
 						doblocking=true;
 						genie.WriteObject(GENIE_OBJ_FORM,FORM_PROCESSING,0);
 						gif_processing_state = PROCESSING_DEFAULT;
-						home_axis_from_code(true,true,false);
+						home_axis_from_code(true,true,true);
 						gif_processing_state = PROCESSING_STOP;
 						st_synchronize();
 						Calib_check_temps();
+						gif_processing_state = PROCESSING_DEFAULT;	
 						changeTool(0);
 						if(gif_processing_state == PROCESSING_ERROR)return;
 						enquecommand_P(PSTR("G41"));
